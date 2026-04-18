@@ -1,10 +1,10 @@
-# Not A Real Doctor
+# Mindchat ai
 
 A responsive mental health support chatbot web application built with Next.js and Tailwind CSS.
 
 ## Overview
 
-"Not A Real Doctor" is a mental health chatbot designed to provide supportive conversations for users. The application features a modern, calming UI with a blue-themed dark mode interface and decorative mental health-themed elements.
+"Mindchat ai" is a mental health chatbot designed to provide supportive conversations for users. The application features a modern, calming UI with a blue-themed dark mode interface and decorative mental health-themed elements.
 
 ## Features
 

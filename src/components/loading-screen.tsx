@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Sparkles, Zap, Lightbulb } from "lucide-react";
+import { Zap, Lightbulb, Brain } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { MindchatLogo } from "@/components/logo";
 
 interface LoadingScreenProps {
   isLoading: boolean;
@@ -54,37 +55,70 @@ export function LoadingScreen({ isLoading }: LoadingScreenProps) {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center space-y-8">
-        {/* Animated brain icon */}
-        <div className="relative">
-          <div className="absolute inset-0 animate-ping rounded-full bg-blue-400/20 opacity-75" style={{animationDuration: "2s"}}></div>
-          <div className="relative flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 border-2 border-blue-400/30 backdrop-blur-sm">
-            <Sparkles className="h-16 w-16 text-blue-400 animate-bounce" />
+          <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center w-14 h-14 rounded-3xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg shadow-blue-500/20">
+              <MindchatLogo className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              Mindchat ai
+            </h1>
           </div>
-          <Zap className="h-8 w-8 text-yellow-400 absolute -top-3 -right-3 animate-bounce" style={{animationDelay: "0.1s"}} />
-          <Lightbulb className="h-8 w-8 text-cyan-400 absolute -bottom-2 -left-2 animate-bounce" style={{animationDelay: "0.2s"}} />
-        </div>
 
-        {/* Text content */}
-        <div className="text-center space-y-4">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            MindChat
-          </h1>
-          <p className="text-lg text-blue-300/80 font-medium">
-            Initializing your personal support buddy{dots}
-          </p>
+          <div className="grid grid-cols-3 gap-4 w-full max-w-3xl px-4 sm:px-0">
+            <div className="relative overflow-hidden rounded-3xl bg-slate-900/80 border border-blue-500/20 p-4 shadow-lg shadow-blue-500/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-70 animate-pulse" />
+              <div className="relative flex items-center justify-between gap-3">
+                <div className="h-3 w-16 rounded-full bg-blue-400/70 animate-pulse" />
+                <div className="h-3 w-8 rounded-full bg-slate-800" />
+              </div>
+              <div className="mt-4 h-2 rounded-full bg-blue-400/40 animate-[pulse_2s_ease-in-out_infinite]" />
+            </div>
+            <div className="relative overflow-hidden rounded-3xl bg-slate-900/80 border border-cyan-500/20 p-4 shadow-lg shadow-cyan-500/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent opacity-70 animate-pulse" />
+              <div className="relative flex items-center justify-between gap-3">
+                <div className="h-3 w-12 rounded-full bg-cyan-400/70 animate-pulse" />
+                <div className="h-3 w-10 rounded-full bg-slate-800" />
+              </div>
+              <div className="mt-4 h-2 rounded-full bg-cyan-400/40 animate-[pulse_2s_ease-in-out_infinite]" />
+            </div>
+            <div className="relative overflow-hidden rounded-3xl bg-slate-900/80 border border-purple-500/20 p-4 shadow-lg shadow-purple-500/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent opacity-70 animate-pulse" />
+              <div className="relative flex items-center justify-between gap-3">
+                <div className="h-3 w-20 rounded-full bg-purple-400/70 animate-pulse" />
+                <div className="h-3 w-6 rounded-full bg-slate-800" />
+              </div>
+              <div className="mt-4 h-2 rounded-full bg-purple-400/40 animate-[pulse_2s_ease-in-out_infinite]" />
+            </div>
+          </div>
+
+          {/* Animated brain icon */}
+          <div className="relative">
+            <div className="absolute inset-0 animate-ping rounded-full bg-blue-400/20 opacity-75" style={{animationDuration: "2s"}}></div>
+            <div className="relative flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 border-2 border-blue-400/30 backdrop-blur-sm">
+              <Brain className="w-16 h-16 text-blue-300/80" />
+            </div>
+            <Zap className="h-8 w-8 text-yellow-400 absolute -top-3 -right-3 animate-bounce" style={{animationDelay: "0.1s"}} />
+            <Lightbulb className="h-8 w-8 text-cyan-400 absolute -bottom-2 -left-2 animate-bounce" style={{animationDelay: "0.2s"}} />
+          </div>
+
+          {/* Text content */}
+          <div className="text-center space-y-4">
+            <p className="text-lg text-blue-300/80 font-medium">
+              Initializing your personal support buddy{dots}
+            </p>
           
-          {/* Loading bar */}
-          <div className="w-64 h-2 bg-slate-800/50 rounded-full overflow-hidden">
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-150"
-              style={{ width: progressWidth }}
-            />
-          </div>
+            {/* Loading bar */}
+            <div className="w-64 h-2 bg-slate-800/50 rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-150"
+                style={{ width: progressWidth }}
+              />
+            </div>
 
-          <p className="text-sm text-blue-300/60">
-            Preparing voice and text modes...
-          </p>
-        </div>
+            <p className="text-sm text-blue-300/60">
+              Preparing voice and text modes...
+            </p>
+          </div>
 
         {/* Feature badges */}
         <div className="flex gap-4 justify-center">

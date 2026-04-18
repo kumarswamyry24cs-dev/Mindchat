@@ -1,6 +1,6 @@
-# Developer Guide - Not A Real Doctor
+# Developer Guide - Mindchat ai
 
-This guide provides information for developers who want to contribute to or modify the Not A Real Doctor mental health chatbot application.
+This guide provides information for developers who want to contribute to or modify the Mindchat ai mental health chatbot application.
 
 ## Development Environment Setup
 

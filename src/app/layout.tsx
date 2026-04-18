@@ -2,7 +2,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 
 export const metadata = {
-  title: "Not A Real Doctor",
+  title: "Mindchat ai",
   description: "A mental health support chatbot",
 };
 

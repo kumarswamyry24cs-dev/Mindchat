@@ -1,6 +1,6 @@
-# User Guide - Not A Real Doctor
+# User Guide - Mindchat ai
 
-Welcome to Not A Real Doctor, a supportive mental health chatbot designed to provide a friendly space for conversation. This guide will help you navigate and use the application effectively.
+Welcome to Mindchat ai, a supportive mental health chatbot designed to provide a friendly space for conversation. This guide will help you navigate and use the application effectively.
 
 ## Getting Started
 

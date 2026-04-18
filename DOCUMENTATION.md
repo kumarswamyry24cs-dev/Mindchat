@@ -1,4 +1,4 @@
-# Not A Real Doctor - Technical Documentation
+# Mindchat ai - Technical Documentation
 
 ## Project Structure
 
