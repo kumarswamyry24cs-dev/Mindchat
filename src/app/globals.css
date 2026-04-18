@@ -1,0 +1,238 @@
+@import "./reset.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 100% 98%;
+    --foreground: 222.2 84% 4.9%;
+    
+    --card: 210 100% 98%;
+    --card-foreground: 222.2 84% 4.9%;
+    
+    --popover: 210 100% 98%;
+    --popover-foreground: 222.2 84% 4.9%;
+    
+    --primary: 210 76.2% 46.3%;
+    --primary-foreground: 210 100% 98%;
+    
+    --secondary: 210 89% 84%;
+    --secondary-foreground: 210 98% 24%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 210 16.3% 46.9%;
+    
+    --accent: 210 100% 86%;
+    --accent-foreground: 210 84% 4.9%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 210 31.8% 91.4%;
+    --input: 210 31.8% 91.4%;
+    --ring: 210 76.2% 46.3%;
+    
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 210 95% 55%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 210 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 210 32.6% 17.5%;
+    --muted-foreground: 210 20.2% 65.1%;
+    
+    --accent: 210 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 210 32.6% 17.5%;
+    --input: 210 32.6% 17.5%;
+    --ring: 210 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-neutral-200 dark:border-neutral-800;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  .animation-delay-6000 {
+    animation-delay: 6s;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: scale(1) translate(0px, 0px);
+    opacity: 0.7;
+  }
+  33% {
+    transform: scale(1.1) translate(10px, -10px);
+    opacity: 0.4;
+  }
+  66% {
+    transform: scale(0.9) translate(-10px, 10px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1) translate(0px, 0px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.2) rotate(5deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(1.1) rotate(-5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(-5deg);
+  }
+  25% {
+    transform: rotate(5deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(-3deg) scale(0.95);
+  }
+  75% {
+    transform: rotate(3deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes bounce-rotate {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-blob {
+  animation: blob 15s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 4s ease-in-out infinite;
+}
+
+.animate-bounce-rotate {
+  animation: bounce-rotate 2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 4s ease-in-out infinite;
+}
+
+.animate-bounce-rotate {
+  animation: bounce-rotate 2s infinite;
+}
